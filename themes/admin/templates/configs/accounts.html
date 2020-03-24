@@ -1,0 +1,57 @@
+<div role="tabpanel" class="tab-pane config-section" id="accounts">
+	<form method="POST" autocomplete="off" class="w-100">
+
+		<div class="form-group">
+			<label>
+				帐户邮箱白名单（Account Email Whitelist）
+				<small class="form-text text-muted">
+					用户可用下方以逗号分隔的邮箱域名注册帐户。（Comma-seperated email domains which users can register under.）
+				</small>
+			</label>
+			<input class="form-control" id='domain-whitelist' name='domain_whitelist' type='text'
+				   placeholder=""
+				   {% if domain_whitelist is defined and domain_whitelist != None %}value="{{ domain_whitelist }}"{% endif %}>
+			<small class="form-text text-muted">
+				例如 ctfd.io,gmail.com,yahoo.com
+			</small>
+		</div>
+
+		<div class="form-group">
+			<label>
+				验证邮箱（Verify Emails）<br>
+				<small class="form-text text-muted">
+					决定是否须先行验证用户邮箱地址（Control whether users must confirm their email addresses before playing）
+				</small>
+			</label>
+			<select class="form-control custom-select" name="verify_emails">
+				<option value="true" {% if verify_emails == True %}selected{% endif %}>启用（Enabled）</option>
+				<option value="false" {% if verify_emails == False or verify_emails == None %}selected{% endif %}>禁用（Disabled）</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label>
+				队伍规模（Team Size）<br>
+				<small class="form-text text-muted">
+					队伍成员数（Amount of users per team）
+				</small>
+			</label>
+			<input class="form-control" id="team_size" name="team_size" type="number" min="0" {% if team_size %}value="{{ team_size }}"{% endif %}>
+		</div>
+
+		<div class="form-group">
+			<label>
+				修改昵称（Name Changes）<br>
+				<small class="form-text text-muted">
+					决定用户是否可以修改其昵称（Control whether users can change their names）
+				</small>
+			</label>
+			<select class="form-control custom-select" name="name_changes">
+				<option value="true" {% if name_changes == True or name_changes == None %}selected{% endif %}>启用（Enabled）</option>
+				<option value="false" {% if name_changes == False %}selected{% endif %}>禁用（Disabled）</option>
+			</select>
+		</div>
+
+		<button type="submit" class="btn btn-md btn-primary float-right">更新（Update）</button>
+	</form>
+</div>

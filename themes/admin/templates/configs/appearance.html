@@ -1,0 +1,131 @@
+<div role="tabpanel" class="tab-pane config-section active" id="appearance">
+	<form id="logo-upload" class="form-upload" method="POST" enctype="multipart/form-data">
+		<div class="form-group">
+			<label for="ctf_logo">
+				徽标（Logo）
+				<small class="form-text text-muted">
+					展示徽标而非竞赛名。（Logo to use for the website instead of a CTF name.）
+				</small>
+			</label>
+
+			{% if ctf_logo %}
+				<div class="d-block py-3">
+					<img id="ctf_logo_preview" class="img-responsive ctf_logo"
+						 src="{{ url_for('views.files', path=ctf_logo) }}"
+						 height="25">
+					<button type="button" id="remove-logo" class="btn-sm btn-danger">
+						移除徽标（Remove Logo）
+					</button>
+				</div>
+			{% endif %}
+
+			<div class="row">
+				<div class="col-md-9">
+					<input class="form-control-file" id="ctf_logo_file" name='file' type='file'
+						   placeholder="CTF Logo">
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<div class="d-inline-block float-right">
+							<button type="submit" class="btn-sm btn-primary float-right">上传（Upload）</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<hr>
+
+	<form method="POST" autocomplete="off" class="w-100">
+		<div class="form-group">
+			<label for="ctf_name">
+				竞赛名称（Competition Name）
+				<small class="form-text text-muted">展示CTF竞赛名而非Logo（Competition name displayed instead of a logo）</small>
+			</label>
+			<input class="form-control" id='ctf_name' name='ctf_name' type='text' placeholder="CTF Name"
+				   {% if ctf_name is defined and ctf_name != None %}value="{{ ctf_name }}"{% endif %}>
+		</div>
+
+		<div class="form-group">
+			<label>
+				CTF 描述（Description for the CTF）<br>
+				<small class="form-text text-muted">
+					CTF描述（Description for the CTF）
+				</small>
+			</label>
+			<textarea class="form-control" type="text" id="ctf_description" name="ctf_description" rows="5">{{ ctf_description }}</textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="user_mode">
+				用户模式（User Mode）
+				<small class="form-text text-muted">用户模式决定他们以个人抑或团队形式注册（User mode allows users to register as themselves
+					or choose to form teams）
+				</small>
+			</label>
+			<div data-toggle="tooltip" data-placement="bottom" title="In order to change User Mode you must reset your CTF">
+				<select class="form-control custom-select" id="user_mode" name="user_mode" disabled="true" style="z-index: -1;">
+					<option value="teams" {% if user_mode == 'teams' %}selected{% endif %}>
+						队伍形式（Teams）
+					</option>
+					<option value="users" {% if user_mode == 'users' %}selected{% endif %}>
+						个人形式（Users）
+					</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="ctf_theme">
+				主题（Theme）
+				<small class="form-text text-muted">
+					切换主题以改变CTF平台样式（Switch themes to change CTFd's aesthetics）
+				</small>
+			</label>
+			<select class="form-control custom-select" id="ctf_theme" name="ctf_theme">
+				<option>{{ ctf_theme }}</option>
+				{% for theme in themes %}
+					<option>{{ theme }}</option>
+				{% endfor %}
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label>
+				主色调（Theme Color）
+				<small class="form-text text-muted">
+					用于控制样式的主色调。需要主题支持。
+				</small>
+			</label>
+			<div class="d-inline-block">
+				<input type="color" id="config-color-picker">
+				<button type="button" class="btn-sm btn-primary" id="config-color-update">更新CSS</button>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label>
+				主题页眉（Theme Header）
+				<small class="form-text text-muted">
+					主题页眉被插入于所有对外公开页面的 <code>&lt;/head&gt;</code> 标签前。
+					需要主题支持。
+				</small>
+			</label>
+			<textarea class="form-control" id="theme-header" name="theme_header" rows="7">{{ theme_header or "" }}</textarea>
+		</div>
+
+		<div class="form-group">
+			<label>
+				主题页脚（Theme Footer）
+				<small class="form-text text-muted">
+					主题页脚被插入于所有对外公开页面的 <code>&lt;/body&gt;</code> 标签前。
+					需要theme support。
+				</small>
+			</label>
+			<textarea class="form-control" id="theme-footer" name="theme_footer" rows="7">{{ theme_footer or "" }}</textarea>
+		</div>
+
+		<button type="submit" class="btn btn-md btn-primary float-right">更新（Update）</button>
+	</form>
+</div>
