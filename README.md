@@ -1,2 +1,2 @@
-# CTFd-
+# CTFd-Chinese-localization
 用于进行CTFd的平台汉化进度监控
