@@ -8,7 +8,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-action text-center w-100">Edit Team</h2>
+				<h2 class="modal-action text-center w-100">编辑队伍（Edit Team）</h2>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -24,7 +24,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-action text-center w-100">Choose Captain</h2>
+				<h2 class="modal-action text-center w-100">选择队长（Choose Captain）</h2>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -40,14 +40,14 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-action text-center w-100">Award Team Member</h2>
+				<h2 class="modal-action text-center w-100">获奖成员（Award Team Member）</h2>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body clearfix">
 				<div class="form-group">
-					<label for="award-member-input">Member</label>
+					<label for="award-member-input">成员（Member）</label>
 					<select class="form-control custom-select" id="award-member-input">
 						<option value=""> -- </option>
 						{% for member in members %}
@@ -66,19 +66,19 @@
 		<h1 id="team-id" class="text-center">{{ team.name }}</h1>
 		<div class="mb-2">
 			{% if team.verified %}
-				<span class="badge badge-success">verified</span>
+				<span class="badge badge-success">已验证（verified）</span>
 			{% endif %}
 			{% if team.hidden %}
-				<span class="badge badge-danger">hidden</span>
+				<span class="badge badge-danger">隐藏（hidden）</span>
 			{% endif %}
 			{% if team.banned %}
-				<span class="badge badge-danger">banned</span>
+				<span class="badge badge-danger">禁止（banned）</span>
 			{% endif %}
 		</div>
 
 		{% if team.oauth_id %}
 			<a href="https://majorleaguecyber.org/t/{{ team.name }}">
-				<h3><span class="badge badge-primary">Official</span></h3>
+				<h3><span class="badge badge-primary">官方（Official）</span></h3>
 			</a>
 		{% endif %}
 
@@ -100,13 +100,13 @@
 		<h3 id="team-place" class="text-center">
 			{% if place %}
 				{{ place }}
-				<small>place</small>
+				<small>地点（place）</small>
 			{% endif %}
 		</h3>
 		<h3 id="team-score" class="text-center">
 			{% if score %}
 				{{ score }}
-				<small>points</small>
+				<small>分数（points）</small>
 			{% endif %}
 		</h3>
 		<div class="pt-3">
@@ -149,7 +149,7 @@
 			</div>
 		{% else %}
 			<h3 class="spinner-error text-center w-100">
-				No solves yet
+				尚未解决（No solves yet）
 			</h3>
 		{% endif %}
 	</div>
@@ -157,12 +157,12 @@
 	<div class="row pt-5">
 		<div class="col-md-12">
 			<table class="table table-striped">
-				<h3 class="text-center">Team Members</h3>
+				<h3 class="text-center">队伍成员（Team Members）</h3>
 				<thead>
 				<tr>
 					<td class="text-center"></td>
-					<td class="text-center"><b>User Name</b></td>
-					<td class="text-center"><b>E-Mail</b></td>
+					<td class="text-center"><b>用户名（User Name）</b></td>
+					<td class="text-center"><b>电子邮箱（E-Mail）</b></td>
 					<td class="text-center"></td>
 				</tr>
 				</thead>
@@ -171,7 +171,7 @@
 					<tr>
 						<td class="text-center">
 							{% if team.captain_id == member.id %}
-								<span class="badge badge-primary">Captain</span>
+								<span class="badge badge-primary">队长（Captain）</span>
 							{% endif %}
 						</td>
 						<td class="text-left">
@@ -200,13 +200,13 @@
 
 	<nav class="nav nav-tabs nav-fill pt-5" id="myTab" role="tablist">
 		<a class="nav-item nav-link active" id="nav-solves-tab" data-toggle="tab" href="#nav-solves" role="tab"
-		   aria-controls="nav-solves" aria-selected="true">Solves</a>
+		   aria-controls="nav-solves" aria-selected="true">解决（Solves）</a>
 
 		<a class="nav-item nav-link" id="nav-wrong-tab" data-toggle="tab" href="#nav-wrong" role="tab"
-		   aria-controls="nav-wrong" aria-selected="false">Fails</a>
+		   aria-controls="nav-wrong" aria-selected="false">失败（Fails）</a>
 
 		<a class="nav-item nav-link" id="nav-awards-tab" data-toggle="tab" href="#nav-awards" role="tab"
-		   aria-controls="nav-awards" aria-selected="false">Awards</a>
+		   aria-controls="nav-awards" aria-selected="false">奖励（Awards）</a>
 	</nav>
 
 	<div class="tab-content" id="nav-tabContent">
@@ -214,16 +214,16 @@
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-striped">
-					<h3 class="text-center py-3 d-block">Solves</h3>
+					<h3 class="text-center py-3 d-block">解决（Solves）</h3>
 					<thead>
 					<tr>
-						<td class="text-center"><b>Challenge</b></td>
-						<td class="text-center"><b>User</b></td>
-						<td class="text-center"><b>Submitted</b></td>
-						<td class="text-center"><b>Category</b></td>
-						<td class="text-center"><b>Value</b></td>
-						<td class="text-center"><b>Time</b></td>
-						<td class="text-center"><b>Delete</b></td>
+						<td class="text-center"><b>题目（Challenge）</b></td>
+						<td class="text-center"><b>用户（User）</b></td>
+						<td class="text-center"><b>已提交（Submitted）</b></td>
+						<td class="text-center"><b>类别（Category）</b></td>
+						<td class="text-center"><b>分值（Value）</b></td>
+						<td class="text-center"><b>时间（Time）</b></td>
+						<td class="text-center"><b>删除（Delete）</b></td>
 					</tr>
 					</thead>
 					<tbody>
@@ -265,14 +265,14 @@
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-striped">
-					<h3 class="text-center py-3 d-block">Fails</h3>
+					<h3 class="text-center py-3 d-block">失败（Fails）</h3>
 					<thead>
 					<tr>
-						<td class="text-center"><b>Challenge</b></td>
-						<td class="text-center"><b>User</b></td>
-						<td class="text-center"><b>Submitted</b></td>
-						<td class="text-center"><b>Time</b></td>
-						<td class="text-center"><b>Delete</b></td>
+						<td class="text-center"><b>题目（Challenge）</b></td>
+						<td class="text-center"><b>用户（User）</b></td>
+						<td class="text-center"><b>提交（Submitted）</b></td>
+						<td class="text-center"><b>时间（Time）</b></td>
+						<td class="text-center"><b>删除（Delete）</b></td>
 					</tr>
 					</thead>
 					<tbody>
@@ -312,17 +312,17 @@
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-striped">
-						<h3 class="text-center py-3 d-block">Awards</h3>
+						<h3 class="text-center py-3 d-block">奖励（Awards）</h3>
 						<thead>
 						<tr>
-							<td class="text-center"><b>Name</b></td>
-							<td class="text-center"><b>User</b></td>
-							<td class="text-center"><b>Description</b></td>
-							<td class="text-center"><b>Date</b></td>
-							<td class="text-center"><b>Value</b></td>
-							<td class="text-center"><b>Category</b></td>
-							<td class="text-center"><b>Icon</b></td>
-							<td class="text-center"><b>Delete</b></td>
+							<td class="text-center"><b>名称（Name）</b></td>
+							<td class="text-center"><b>用户（User）</b></td>
+							<td class="text-center"><b>描述（Description）</b></td>
+							<td class="text-center"><b>时间（Date）</b></td>
+							<td class="text-center"><b>分值（Value）</b></td>
+							<td class="text-center"><b>类别（Category）</b></td>
+							<td class="text-center"><b>图标（Icon）</b></td>
+							<td class="text-center"><b>删除（Delete）</b></td>
 						</tr>
 						</thead>
 						<tbody id="awards-body">
@@ -360,12 +360,12 @@
 	<div class="row pt-5">
 		<div class="col-md-12">
 			<table class="table table-striped">
-				<h3 class="text-center">IP Addresses</h3>
+				<h3 class="text-center">IP地址（IP Addresses）</h3>
 				<thead>
 				<tr>
-					<td class="text-center"><b>User</b></td>
-					<td class="text-center"><b>IP Address</b></td>
-					<td class="text-center"><b>Last Seen</b></td>
+					<td class="text-center"><b>用户（User）</b></td>
+					<td class="text-center"><b>IP地址（IP Address）</b></td>
+					<td class="text-center"><b>最后一次上线（Last Seen）</b></td>
 				</tr>
 				</thead>
 				<tbody>

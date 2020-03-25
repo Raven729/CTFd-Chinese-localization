@@ -6,7 +6,7 @@
 {% block content %}
 <div class="jumbotron">
 	<div class="container">
-		<h1>新建挑战（Create Challenge）</h1>
+		<h1>新建题目（Create Challenge）</h1>
 	</div>
 </div>
 
@@ -14,7 +14,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">选项</h5>
+				<h5 class="modal-title">选项（Options）</h5>
 				<button type="button" class="close" data-dismiss="modal">
 					<span>&times;</span>
 				</button>
@@ -26,7 +26,7 @@
 							<div class="col-md-8">
 								<label>
 									Flag:<br>
-									<small class="form-text text-muted">题目静态Flag</small>
+									<small class="form-text text-muted">题目静态Flag（Static flag for your challenge）</small>
 								</label>
 								<input type="text" class="form-control" name="flag">
 							</div>
@@ -36,8 +36,8 @@
 									<small class="form-text text-muted">&nbsp;</small>
 								</label>
 								<select class="form-control custom-select w-100" name="flag_data">
-									<option value="">区分大小写</option>
-									<option value="case_insensitive">不区分大小写</option>
+									<option value="">区分大小写（Case Sensitive）</option>
+									<option value="case_insensitive">不区分大小写(Case Insensitive)</option>
 								</select>
 							</div>
 						</div>
@@ -46,26 +46,26 @@
 					<div class="form-group">
 						<div class="form-group">
 							<label>
-								文件:
-								<small class="form-text text-muted">题目附带的文件</small>
+								文件（Files）:
+								<small class="form-text text-muted">题目附带的文件（Files distributed along with your challenge）</small>
 							</label>
 							<input class="form-control-file" type="file" name="file" multiple="multiple">
-							<sub>用Control+Click或Cmd+Click添加多个文件</sub>
+							<sub>用Control+Click或Cmd+Click添加多个文件（Attach multiple files using Control+Click or Cmd+Click）</sub>
 						</div>
 					</div>
 					<div class="form-group">
 						<label>
-							状态<br>
-							<small class="form-text text-muted">该题对于用户而言应</small>
+							状态（State）<br>
+							<small class="form-text text-muted">该题对于用户而言应（Should the challenge be visible to users）</small>
 						</label>
 						<select class="form-control custom-select" name="state">
-							<option value="visible">可见</option>
-							<option value="hidden" selected>不可见</option>
+							<option value="visible">可见（Visible）</option>
+							<option value="hidden" selected>不可见（Hidden）</option>
 						</select>
 					</div>
 					<input id="challenge_id" type="hidden" name="challenge_id">
 					<div class="form-group">
-						<button class="btn btn-primary float-right create-challenge-submit" type="submit">结束</button>
+						<button class="btn btn-primary float-right create-challenge-submit" type="submit">结束（Finish）</button>
 					</div>
 				</form>
 			</div>
@@ -79,7 +79,7 @@
 			<div class="row">
 				<div class="col-md-6 offset-md-3">
 					<div id="create-chals-select-div" style="display: none;">
-						<label for="create-chals-select" class="control-label">选择题目类型</label>
+						<label for="create-chals-select" class="control-label">选择题目类型（Choose Challenge Type）</label>
 						<select class="form-control custom-select" id="create-chals-select">
 						</select>
 					</div>
