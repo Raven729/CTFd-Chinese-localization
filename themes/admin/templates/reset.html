@@ -6,7 +6,7 @@
 {% block content %}
 	<div class="jumbotron">
 		<div class="container">
-			<h1>Reset</h1>
+			<h1>重置</h1>
 		</div>
 	</div>
 	<div class="container">
@@ -15,14 +15,15 @@
 				<form method="POST" id="reset-ctf-form">
 					<div class="alert alert-danger" role="alert">
 						<p>
-							Resetting your CTF will delete all user and team data. Think carefully before resetting because
-							no automated backups are made and all non-challenge data is lost.
+							重置CTF将删除所有用户和队伍数据。重置前务请仔细考虑，因为
+							没有自动备份，所有非问题的数据都丢失了。
+						
 						</p>
 
 						<span>
 							<strong>
-								Create backups of all data you need by <a href="{{ url_for('admin.config', _anchor='backup') }}">creating a CTFd Export</a>
-								or by copying the database and CTFd source code folder.
+								创建您需要的所有数据的备份<a href="{{ url_for('admin.config', _anchor='backup') }}"></a>
+								或者通过复制数据库和CTFD源代码文件夹。
 							</strong>
 						</span>
 					</div>
@@ -30,7 +31,7 @@
 					<input id="nonce" type="hidden" name="nonce" value="{{ nonce }}">
 
 					<button class="btn btn-warning btn-lg btn-block">
-						Reset CTF
+						重置CTF
 					</button>
 				</form>
 			</div>

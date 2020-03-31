@@ -12,7 +12,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h3 class="text-center">Media Library</h3>
+							<h3 class="text-center">媒体库</h3>
 						</div>
 					</div>
 				</div>
@@ -27,7 +27,7 @@
 							<div class="col-md-6" id="media-library-list">
 							</div>
 							<div class="col-md-6" id="media-library-details">
-								<h4 class="text-center">Media Details</h4>
+								<h4 class="text-center">媒体详情</h4>
 								<div id="media-item">
 									<div class="text-center" id="media-icon">
 									</div>
@@ -36,7 +36,7 @@
 									</div>
 									<br>
 									<div class="form-group">
-										Link: <input class="form-control" type="text" id="media-link" readonly>
+										链接: <input class="form-control" type="text" id="media-link" readonly>
 									</div>
 
 									<div class="form-group text-center">
@@ -45,7 +45,7 @@
 												<button class="btn btn-success w-100" id="media-insert"
 														data-toggle="tooltip" data-placement="top"
 														title="Insert link into editor">
-													Insert
+													插入
 												</button>
 											</div>
 											<div class="col-md-3">
@@ -72,11 +72,11 @@
 				<form id="media-library-upload" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="media-files">
-							Upload Files
+							上传文件
 						</label>
 						<input type="file" name="file" id="media-files" class="form-control-file" multiple>
 						<sub class="help-block">
-							Attach multiple files using Control+Click or Cmd+Click.
+							用Control+Click或Cmd+Clic添加多个文件
 						</sub>
 					</div>
 					<input type="hidden" value="page" name="type">
@@ -84,7 +84,7 @@
 			</div>
 			<div class="modal-footer">
 				<div class="float-right">
-					<button type="submit" class="btn btn-primary media-upload-button">Upload</button>
+					<button type="submit" class="btn btn-primary media-upload-button">上传</button>
 				</div>
 			</div>
 		</div>
@@ -110,8 +110,8 @@
 				<div class="form-group">
 					<div class="col-md-12">
 						<label>
-							Title<br>
-							<small class="text-muted">This is the title shown on the navigation bar</small>
+							标题<br>
+							<small class="text-muted">这是导航栏上显示的标题。</small>
 						</label>
 						<input class="form-control radius" id="route" type="text" name="title"
 							   value="{% if page is defined %}{{ page.title }}{% endif %}" placeholder="Title">
@@ -121,10 +121,10 @@
 				<div class="form-group">
 					<div class="col-md-12">
 						<label>
-							Route<br>
+							导航<br>
 							<small class="text-muted">
-								This is the URL route that your page will be at (e.g. /page). You can
-								also enter links to link to that page.
+								这是您的页面将在（例如/页面）的URL路由。你可以
+								也输入链接到那个页面的链接。
 							</small>
 						</label>
 						<input class="form-control radius" id="route" type="text" name="route"
@@ -135,16 +135,16 @@
 				<div class="form-group">
 					<div class="col-md-12">
 
-						<h3>Content</h3>
-						<small class="text-muted">This is the HTML content of your page</small>
+						<h3>内容</h3>
+						<small class="text-muted">这是页面的HTML内容</small>
 
 						<ul class="nav nav-tabs" role="tablist" id="content-edit">
 							<li class="nav-item" role="presentation" class="active">
 								<a class="nav-link active" href="#content-write" aria-controls="home" role="tab"
-								   data-toggle="tab">Write</a>
+								   data-toggle="tab">写入</a>
 							</li>
 							<li class="nav-item" role="presentation">
-								<a class="nav-link preview-page" href="#">Preview</a>
+								<a class="nav-link preview-page" href="#">浏览</a>
 							</li>
 						</ul>
 
@@ -157,7 +157,7 @@
 										<div class="btn-group">
 											<button type="button" class="btn btn-primary" id="media-button">
 												<i class="fas fa-camera-retro"></i>
-												Media Library
+												媒体库
 											</button>
 										</div>
 									</div>
@@ -165,20 +165,20 @@
 									<span class="nav-link d-none d-md-block d-lg-block">|</span>
 
 									<div class="form-group pr-3">
-										Draft:
+										草稿:
 										{% set draft = page is defined and page.draft == True %}
 										<select class="form-control custom-select" name="draft">
 											<option value="true" {% if draft == True %}selected{% endif %}>
-												True
+												是
 											</option>
 											<option value="false" {% if draft == False %}selected{% endif %}>
-												False
+												否
 											</option>
 										</select>
 									</div>
 
 									<div class="form-group pr-3">
-										Hidden:
+										隐藏:
 										{% set hidden = page is defined and page.hidden == True %}
 										<select class="form-control custom-select" name="hidden">
 											<option value="true" {% if hidden == True %}selected{% endif %}>True
@@ -189,14 +189,14 @@
 									</div>
 
 									<div class="form-group pr-3">
-										Authentication Required:
+										要求认证:
 										{% set auth_required = page is defined and page.auth_required == True %}
 										<select class="form-control custom-select" name="auth_required">
 											<option value="true" {% if auth_required == True %}selected{% endif %}>
-												True
+												是
 											</option>
 											<option value="false" {% if auth_required == False %}selected{% endif %}>
-												False
+												否
 											</option>
 										</select>
 									</div>
@@ -221,9 +221,9 @@
 					<input name='nonce' type='hidden' value="{{ nonce }}">
 					<button class="btn btn-primary" id="save-page">
 						{% if page is defined %}
-							Update
+							更新
 						{% else %}
-							Save
+							保存
 						{% endif %}
 					</button>
 				</div>

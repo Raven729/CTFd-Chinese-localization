@@ -3,9 +3,9 @@
 
 		<div class="form-group">
 			<label>
-				帐户邮箱白名单（Account Email Whitelist）
+				帐户邮箱白名单
 				<small class="form-text text-muted">
-					用户可用下方以逗号分隔的邮箱域名注册帐户。（Comma-seperated email domains which users can register under.）
+					用户可用下方以逗号分隔的邮箱域名注册帐户。
 				</small>
 			</label>
 			<input class="form-control" id='domain-whitelist' name='domain_whitelist' type='text'
@@ -18,22 +18,22 @@
 
 		<div class="form-group">
 			<label>
-				验证邮箱（Verify Emails）<br>
+				验证邮箱<br>
 				<small class="form-text text-muted">
-					决定是否须先行验证用户邮箱地址（Control whether users must confirm their email addresses before playing）
+					决定是否须先行验证用户邮箱地址
 				</small>
 			</label>
 			<select class="form-control custom-select" name="verify_emails">
-				<option value="true" {% if verify_emails == True %}selected{% endif %}>启用（Enabled）</option>
-				<option value="false" {% if verify_emails == False or verify_emails == None %}selected{% endif %}>禁用（Disabled）</option>
+				<option value="true" {% if verify_emails == True %}selected{% endif %}>启用</option>
+				<option value="false" {% if verify_emails == False or verify_emails == None %}selected{% endif %}>禁用</option>
 			</select>
 		</div>
 
 		<div class="form-group">
 			<label>
-				队伍规模（Team Size）<br>
+				队伍规模<br>
 				<small class="form-text text-muted">
-					队伍成员数（Amount of users per team）
+					队伍成员数
 				</small>
 			</label>
 			<input class="form-control" id="team_size" name="team_size" type="number" min="0" {% if team_size %}value="{{ team_size }}"{% endif %}>
@@ -41,17 +41,17 @@
 
 		<div class="form-group">
 			<label>
-				修改昵称（Name Changes）<br>
+				修改昵称<br>
 				<small class="form-text text-muted">
-					决定用户是否可以修改其昵称（Control whether users can change their names）
+					决定用户是否可以修改其昵称
 				</small>
 			</label>
 			<select class="form-control custom-select" name="name_changes">
-				<option value="true" {% if name_changes == True or name_changes == None %}selected{% endif %}>启用（Enabled）</option>
-				<option value="false" {% if name_changes == False %}selected{% endif %}>禁用（Disabled）</option>
+				<option value="true" {% if name_changes == True or name_changes == None %}selected{% endif %}>启用</option>
+				<option value="false" {% if name_changes == False %}selected{% endif %}>禁用</option>
 			</select>
 		</div>
 
-		<button type="submit" class="btn btn-md btn-primary float-right">更新（Update）</button>
+		<button type="submit" class="btn btn-md btn-primary float-right">更新</button>
 	</form>
 </div>

@@ -8,7 +8,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-action text-center w-100">Edit User</h2>
+				<h2 class="modal-action text-center w-100">编辑用户</h2>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -24,7 +24,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-action text-center w-100">奖励用户（Award User）</h2>
+				<h2 class="modal-action text-center w-100">奖励用户</h2>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -40,7 +40,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-action text-center w-100">邮箱用户（Email User）</h2>
+				<h2 class="modal-action text-center w-100">邮箱用户</h2>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -57,16 +57,16 @@
 		<h1 id="team-id" class="text-center p-0 m-0">{{ user.name }}</h1>
 		<div class="mb-2">
 			{% if user.type == 'admin' %}
-				<span class="badge badge-primary">管理员（admin）</span>
+				<span class="badge badge-primary">管理员</span>
 			{% endif %}
 			{% if user.verified %}
-				<span class="badge badge-success">已验证（verified）</span>
+				<span class="badge badge-success">已验证</span>
 			{% endif %}
 			{% if user.hidden %}
-				<span class="badge badge-danger">隐藏（hidden）</span>
+				<span class="badge badge-danger">隐藏</span>
 			{% endif %}
 			{% if user.banned %}
-				<span class="badge badge-danger">禁止（banned）</span>
+				<span class="badge badge-danger">禁止</span>
 			{% endif %}
 		</div>
 
@@ -88,7 +88,7 @@
 		<h2 id="team-email" class="text-center">{{ user.email }}</h2>
 		{% if user.oauth_id %}
 			<a href="https://majorleaguecyber.org/u/{{ user.name }}">
-				<h3><span class="badge badge-primary">官方（Official）</span></h3>
+				<h3><span class="badge badge-primary">官方</span></h3>
 			</a>
 		{% endif %}
 
@@ -148,23 +148,23 @@
 				</div>
 			</div>
 		{% else %}
-			<h3 class="spinner-error text-center w-100">尚未解决（No solves yet）</h3>
+			<h3 class="spinner-error text-center w-100">尚无解决</h3>
 		{% endif %}
 	</div>
 
 
 	<nav class="nav nav-tabs nav-fill pt-5" id="myTab" role="tablist">
 		<a class="nav-item nav-link active" id="nav-solves-tab" data-toggle="tab" href="#nav-solves" role="tab"
-		   aria-controls="nav-solves" aria-selected="true">解决（Solves）</a>
+		   aria-controls="nav-solves" aria-selected="true">解决</a>
 
 		<a class="nav-item nav-link" id="nav-wrong-tab" data-toggle="tab" href="#nav-wrong" role="tab"
-		   aria-controls="nav-wrong" aria-selected="false">失败（Fails）</a>
+		   aria-controls="nav-wrong" aria-selected="false">失败</a>
 
 		<a class="nav-item nav-link" id="nav-awards-tab" data-toggle="tab" href="#nav-awards" role="tab"
-		   aria-controls="nav-awards" aria-selected="false">奖励（Awards）</a>
+		   aria-controls="nav-awards" aria-selected="false">奖励</a>
 
 		<a class="nav-item nav-link" id="nav-missing-tab" data-toggle="tab" href="#nav-missing" role="tab"
-		   aria-controls="nav-missing" aria-selected="false">遗失（Missing）</a>
+		   aria-controls="nav-missing" aria-selected="false">遗失</a>
 	</nav>
 
 	<div class="tab-content" id="nav-tabContent">
@@ -172,15 +172,15 @@
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-striped">
-					<h3 class="text-center py-3 d-block">解决（Solves）</h3>
+					<h3 class="text-center py-3 d-block">解决</h3>
 					<thead>
 					<tr>
-						<td class="text-center"><b>题目（Challenge）</b></td>
-						<td class="text-center"><b>已提交（Submitted）</b></td>
-						<td class="text-center"><b>类别（Category）</b></td>
-						<td class="text-center"><b>分值（Value）</b></td>
-						<td class="text-center"><b>时间（Time）</b></td>
-						<td class="text-center"><b>删除（Delete）</b></td>
+						<td class="text-center"><b>题目</b></td>
+						<td class="text-center"><b>已提交</b></td>
+						<td class="text-center"><b>类别</b></td>
+						<td class="text-center"><b>分值</b></td>
+						<td class="text-center"><b>时间</b></td>
+						<td class="text-center"><b>删除</b></td>
 					</tr>
 					</thead>
 					<tbody>
@@ -216,13 +216,13 @@
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-striped">
-					<h3 class="text-center py-3 d-block">失败（Fails）</h3>
+					<h3 class="text-center py-3 d-block">失败</h3>
 					<thead>
 					<tr>
-						<td class="text-center"><b>题目（Challenge）</b></td>
-						<td class="text-center"><b>被提交（Submitted）</b></td>
-						<td class="text-center"><b>时间（Time）</b></td>
-						<td class="text-center"><b>删除（Delete）</b></td>
+						<td class="text-center"><b>题目</b></td>
+						<td class="text-center"><b>被提交</b></td>
+						<td class="text-center"><b>时间</b></td>
+						<td class="text-center"><b>删除</b></td>
 					</tr>
 					</thead>
 					<tbody>
@@ -258,16 +258,16 @@
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-striped">
-						<h3 class="text-center py-3 d-block">奖励（Awards）</h3>
+						<h3 class="text-center py-3 d-block">奖励</h3>
 						<thead>
 						<tr>
-							<td class="text-center"><b>名称（Name）</b></td>
-							<td class="text-center"><b>描述（Description）</b></td>
-							<td class="text-center"><b>时间（Date）</b></td>
-							<td class="text-center"><b>分值（Value）</b></td>
-							<td class="text-center"><b>类别（Category）</b></td>
-							<td class="text-center"><b>图标（Icon）</b></td>
-							<td class="text-center"><b>删除（Delete）</b></td>
+							<td class="text-center"><b>名称</b></td>
+							<td class="text-center"><b>描述</b></td>
+							<td class="text-center"><b>时间</b></td>
+							<td class="text-center"><b>分值</b></td>
+							<td class="text-center"><b>类别</b></td>
+							<td class="text-center"><b>图标</b></td>
+							<td class="text-center"><b>删除</b></td>
 						</tr>
 						</thead>
 						<tbody id="awards-body">
@@ -301,13 +301,13 @@
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table table-striped">
-					<h3 class="text-center py-3 d-block">遗失（Missing）</h3>
+					<h3 class="text-center py-3 d-block">遗失</h3>
 					<thead>
 						<tr>
-							<td class="text-center"><b>问题（Challenge）</b></td>
-							<td class="text-center"><b>类别（Category）</b></td>
-							<td class="text-center"><b>分值（Value）</b></td>
-							<td class="text-center"><b>解决标记（Mark Solved）</b></td>
+							<td class="text-center"><b>问题</b></td>
+							<td class="text-center"><b>类别</b></td>
+							<td class="text-center"><b>分值</b></td>
+							<td class="text-center"><b>解决标记</b></td>
 						</tr>
 					</thead>
 					<tbody>
@@ -339,11 +339,11 @@
 	<div class="row pt-5">
 		<div class="col-md-12">
 			<table class="table table-striped">
-				<h3 class="text-center">IP地址（IP Addresses）</h3>
+				<h3 class="text-center">IP地址</h3>
 				<thead>
 				<tr>
-					<td class="text-center"><b>IP地址（IP Address）</b></td>
-					<td class="text-center"><b>最后一次上线（Last Seen）</b></td>
+					<td class="text-center"><b>IP地址</b></td>
+					<td class="text-center"><b>最后一次上线</b></td>
 				</tr>
 				</thead>
 				<tbody>
