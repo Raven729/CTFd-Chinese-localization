@@ -6,7 +6,7 @@
 {% block content %}
 <div class="jumbotron">
 	<div class="container">
-		<h1>Users
+		<h1>用户
 			<span class="create-team" role="button" data-toggle="tooltip" title="Create User">
 				<a href="{{ url_for('admin.users_new') }}" style="color: inherit;">
 					<i class="btn-fa fas fa-plus-circle"></i>
@@ -20,26 +20,26 @@
 	<div class="row">
 		<div class="col-md-12">
 			{% if q and field %}
-			<h4 class="text-center">Searching for users with {{field}} matching {{q}}</h4>
+			<h4 class="text-center">查找用户 {{field}} 为 {{q}}</h4>
 			{% endif %}
 
 			<form method="GET" class="form-inline">
 					<div class="form-group col-md-2">
-						<label for="sel1" class="sr-only" >Search Field</label>
+						<label for="sel1" class="sr-only" >查找域</label>
 						<select class="form-control custom-select w-100" id="sel1" name="field">
-							<option value="name" {% if field == 'name' %}selected{% endif %}>Name</option>
+							<option value="name" {% if field == 'name' %}selected{% endif %}>名称</option>
 							<option value="id" {% if field == 'id' %}selected{% endif %}>ID</option>
-							<option value="email" {% if field == 'email' %}selected{% endif %}>Email</option>
-							<option value="affiliation" {% if field == 'affiliation' %}selected{% endif %}>Affiliation</option>
-							<option value="ip" {% if field == 'ip' %}selected{% endif %}>IP Address</option>
+							<option value="email" {% if field == 'email' %}selected{% endif %}>邮箱</option>
+							<option value="affiliation" {% if field == 'affiliation' %}selected{% endif %}>附属</option>
+							<option value="ip" {% if field == 'ip' %}selected{% endif %}>IP地址</option>
 					  </select>
 					</div>
 					<div class="form-group col-md-8">
-						<label for="team-name-search" class="sr-only">Parameter</label>
+						<label for="team-name-search" class="sr-only">参数</label>
 						<input type="text" class="form-control w-100" id="team-name-search" name="q" placeholder="Search for matching user" {% if q %}value="{{q}}"{% endif %}>
 					</div>
 					<div class="form-group col-md-2">
-						<label for="team-name-search" class="sr-only">Search</label>
+						<label for="team-name-search" class="sr-only">查找</label>
 						<button type="submit" class="btn btn-primary w-100"><i class="fas fa-search" aria-hidden="true"></i></button>
 					</div>
 			</form>
@@ -51,21 +51,21 @@
 					<tr>
 						<td width="10px" class="text-center"><b>ID</b>
 						</td>
-						<td class="text-center"><b>User</b>
+						<td class="text-center"><b>用户</b>
 						</td>
-						<td class="d-md-table-cell d-lg-table-cell text-center"><b>Email</b>
+						<td class="d-md-table-cell d-lg-table-cell text-center"><b>邮箱</b>
 						</td>
-						<td class=""><b>Website</b>
+						<td class=""><b>站点</b>
 						</td>
-						<td class=""><b>Country</b>
+						<td class=""><b>国家</b>
 						</td>
-						<td class="text-center"><b>Admin</b>
+						<td class="text-center"><b>管理员</b>
 						</td>
-						<td class="text-center"><b>Verified</b>
+						<td class="text-center"><b>已验证</b>
 						</td>
-						<td class="text-center"><b>Hidden</b>
+						<td class="text-center"><b>隐藏</b>
 						</td>
-						<td class="text-center"><b>Banned</b>
+						<td class="text-center"><b>禁止</b>
 						</td>
 					</tr>
 				</thead>
@@ -79,7 +79,7 @@
 							</a>
 							{% if user.oauth_id %}
 								<a href="https://majorleaguecyber.org/u/{{ user.name }}">
-									<span class="badge badge-primary">Official</span>
+									<span class="badge badge-primary">官方</span>
 								</a>
 							{% endif %}
 							{% if user.affiliation %}
@@ -109,22 +109,22 @@
 						</td>
 						<td class="team-admin d-md-table-cell d-lg-table-cell text-center" value="{{ user.type }}">
 							{% if user.type == 'admin' %}
-								<span class="badge badge-primary">admin</span>
+								<span class="badge badge-primary">管理员</span>
 							{% endif %}
 						</td>
 						<td class="team-verified d-md-table-cell d-lg-table-cell text-center" value="{{ user.verified }}">
 							{% if user.verified %}
-								<span class="badge badge-success">verified</span>
+								<span class="badge badge-success">已验证</span>
 							{% endif %}
 						</td>
 						<td class="team-hidden d-md-table-cell d-lg-table-cell text-center" value="{{ user.hidden }}">
 							{% if user.hidden %}
-								<span class="badge badge-danger">hidden</span>
+								<span class="badge badge-danger">隐藏</span>
 							{% endif %}
 						</td>
 						<td class="team-banned d-md-table-cell d-lg-table-cell text-center" value="{{ user.banned }}">
 							{% if user.banned %}
-								<span class="badge badge-danger">banned</span>
+								<span class="badge badge-danger">禁止</span>
 							{% endif %}
 						</td>
 					</tr>
@@ -132,7 +132,7 @@
 				</tbody>
 			</table>
 			{% if pages > 1 %}
-			<div class="text-center">Page
+			<div class="text-center">页面
 				<br>
 				{% if curr_page != 1 %}<a href="{{ url_for('admin.users_listing', page=curr_page - 1) }}">&lt;&lt;&lt;</a>{% endif %}
 				{% for page in range(1, pages + 1) %}

@@ -6,7 +6,7 @@
 {% block content %}
 	<div class="jumbotron">
 		<div class="container">
-			<h1>Setup</h1>
+			<h1>安装</h1>
 		</div>
 	</div>
 	<div class="container">
@@ -14,7 +14,7 @@
 			{% for error in errors %}
 				<div class="submit-row">
 					<div class="alert alert-danger alert-dismissable" role="alert">
-						<span class="sr-only">Error:</span>
+						<span class="sr-only">错误:</span>
 						{{ error }}
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
 								aria-hidden="true">×</span></button>
@@ -24,19 +24,19 @@
 			<form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal" id="setup-form">
 				<ul class="nav nav-pills nav-fill mb-4">
 					<li class="nav-item">
-						<a class="nav-link active" data-toggle="pill" href="#general">General</a>
+						<a class="nav-link active" data-toggle="pill" href="#general">全局</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="pill" href="#administration">Administration</a>
+						<a class="nav-link" data-toggle="pill" href="#administration">管理</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="pill" href="#style">Style</a>
+						<a class="nav-link" data-toggle="pill" href="#style">风格</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="pill" href="#datetime">Date &amp; Time</a>
+						<a class="nav-link" data-toggle="pill" href="#datetime">时间</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="pill" href="#integrations">Integrations</a>
+						<a class="nav-link" data-toggle="pill" href="#integrations">集成</a>
 					</li>
 				</ul>
 
@@ -44,9 +44,9 @@
 					<div class="tab-pane fade show active" id="general" role="tabpanel">
 						<div class="form-group">
 							<label>
-								CTF Name<br>
+								CTF竞赛名<br>
 								<small class="form-text text-muted">
-									Name for the CTF
+									CTF竞赛名
 								</small>
 							</label>
 							<input class="form-control" type="text" id="ctf_name" name="ctf_name" />
@@ -54,9 +54,9 @@
 
 						<div class="form-group">
 							<label>
-								CTF Description<br>
+								CTF竞赛描述<br>
 								<small class="form-text text-muted">
-									Description for the CTF
+									CTF竞赛描述
 								</small>
 							</label>
 							<textarea class="form-control" type="text" id="ctf_description" name="ctf_description" rows="5"></textarea>
@@ -64,49 +64,48 @@
 
 						<div class="form-group">
 							<label>
-								CTF User Mode
+								CTF竞赛用户模式（CTF User Mode）
 								<small class="form-text text-muted">
-									User Mode for the CTF. <br>
-									Dictates whether users join teams to play (Team Mode) or
-									play as themselves (User Mode)
+									CTF竞赛用户模式<br>
+									选择用户模式为加入队伍（队伍模式）或独立用户（用户模式）
 								</small>
 							</label>
 							<select class="form-control custom-select" id="user_mode" name="user_mode">
-								<option value="teams">Team Mode</option>
-								<option value="users">User Mode</option>
+								<option value="teams">队伍模式</option>
+								<option value="users">用户模式</option>
 							</select>
 						</div>
 
 						<div class="float-right">
 							<button type="button" class="btn btn-primary btn-outlined tab-next" data-href="#administration">
-								Next
+								下一项
 							</button>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="administration" role="tabpanel">
 						<div class="form-group">
 							<label>
-								Admin Username<br>
+								管理员用户名<br>
 								<small class="form-text text-muted">
-									Your username for the administration account
+									管理员帐户用户名
 								</small>
 							</label>
 							<input class="form-control" type="text" name="name" required/>
 						</div>
 						<div class="form-group">
 							<label>
-								Admin Email<br>
+								管理员邮箱（Admin Email）<br>
 								<small class="form-text text-muted">
-									Your email address for the administration account
+									管理员帐户邮箱地址
 								</small>
 							</label>
 							<input class="form-control" type="email" name="email" required/>
 						</div>
 						<div class="form-group">
 							<label>
-								Admin Password<br>
+								管理员密码Admin Password<br>
 								<small class="form-text text-muted">
-									Your password for the administration account
+									管理员帐户密码
 								</small>
 							</label>
 							<input class="form-control" type="password" name="password" required/>
@@ -115,22 +114,22 @@
 						<div class="form-check">
 							<label class="form-check-label">
 								<input class="form-check-input" type="checkbox" value="" id="newsletter-checkbox" checked>
-								Subscribe email address to the CTFd LLC Newsletter for news and updates
+								将您的邮箱地址发送至CTFd LLC Newsletter以获得新闻和更新
 							</label>
 						</div>
 
 						<div class="float-right">
 							<button type="button" class="btn btn-primary btn-outlined tab-next" data-href="#style">
-								Next
+								下一项
 							</button>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="style" role="tabpanel">
 						<div class="form-group">
 							<label>
-								Theme<br>
+								主题<br>
 								<small class="form-text text-muted">
-									CTFd Theme to use
+									CTFd使用主题
 								</small>
 							</label>
 							<select class="form-control custom-select" name="ctf_theme">
@@ -141,9 +140,9 @@
 						</div>
 						<div class="form-group">
 							<label>
-								Theme Color
+								主题色
 								<small class="form-text text-muted">
-									Color used by theme to control aesthetics. Requires theme support.
+									用于控制样式外观的主题颜色，要求主题支持
 								</small>
 							</label>
 							<br>
@@ -153,35 +152,35 @@
 									<input type="color" id="config-color-picker" class="pr-1" style="width: 100px; height: 30px;" value="">
 								</div>
 								<div class="btn-group">
-									<button type="button" id="config-color-reset">Reset</button>
+									<button type="button" id="config-color-reset">重置</button>
 								</div>
 							</div>
 						</div>
 						<div class="float-right">
 							<button type="button" class="btn btn-primary btn-outlined tab-next" data-href="#datetime">
-								Next
+								下一项
 							</button>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="datetime" role="tabpanel">
 						<div class="form-group">
 							<label>
-								Start Time<br>
+								开始时间<br>
 								<small class="form-text text-muted">
-									Time when your CTF is scheduled to start. Optional.
+									指定CTF竞赛开始时间，为可选项
 								</small>
 							</label>
 							<div class="row">
 								<div class="col-md-4">
-									<label>Date</label>
+									<label>日期</label>
 									<input class="form-control" id="start-date" type="date" placeholder="yyyy-mm-dd" data-preview="#start"/>
 								</div>
 								<div class="col-md-4">
-									<label>Time</label>
+									<label>时刻</label>
 									<input class="form-control" id="start-time" type="time" placeholder="hh:mm" data-preview="#start"/>
 								</div>
 								<div class="col-md-4">
-									<label>UTC Preview</label>
+									<label>UTC 预览</label>
 									<input class="form-control" type="text" id="start-preview" name="start" readonly/>
 								</div>
 							</div>
@@ -189,22 +188,22 @@
 
 						<div class="form-group">
 							<label>
-								End Time<br>
+								结束时间<br>
 								<small class="form-text text-muted">
-									Time when your CTF is scheduled to end. Optional.
+									指定CTF竞赛结束时间，为可选项
 								</small>
 							</label>
 							<div class="row">
 								<div class="col-md-4">
-									<label>Date</label>
+									<label>日期</label>
 									<input class="form-control" id="end-date" type="date" placeholder="yyyy-mm-dd" data-preview="#end"/>
 								</div>
 								<div class="col-md-4">
-									<label>Time</label>
+									<label>时刻</label>
 									<input class="form-control" id="end-time" type="time" placeholder="hh:mm" data-preview="#end"/>
 								</div>
 								<div class="col-md-4">
-									<label>UTC Preview</label>
+									<label>UTC预览</label>
 									<input class="form-control" type="text" id="end-preview" name="end" readonly />
 								</div>
 							</div>
@@ -212,7 +211,7 @@
 
 						<div class="float-right">
 							<button type="button" class="btn btn-primary btn-outlined tab-next" data-href="#integrations">
-								Next
+								下一项
 							</button>
 						</div>
 					</div>
@@ -230,7 +229,7 @@
 							</ul>
 							</p>
 							<button type="button" id="integration-mlc" class="btn btn-primary btn-block">
-								Setup
+								安装
 							</button>
 						</div>
 
@@ -240,7 +239,7 @@
 
 						<div class="submit-row float-right">
 							<button type="submit" tabindex="0" class="btn btn-md btn-primary btn-outlined">
-								Finish
+								结束
 							</button>
 						</div>
 					</div>

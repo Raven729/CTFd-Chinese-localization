@@ -7,7 +7,7 @@
 
 <div class="jumbotron">
 	<div class="container">
-		<h1>{% if type %}{{ type|title }} {% endif %}Submissions</h1>
+		<h1>{% if type %}{{ type|title }} {% endif %}提交</h1>
 	</div>
 </div>
 
@@ -18,12 +18,12 @@
 				<thead>
 					<tr>
 						<td class="text-center"><b>ID</b></td>
-						<td><b>Team</b></td>
-						<td><b>Challenge</b></td>
-						<td><b>Type</b></td>
-						<td><b>Submission</b></td>
-						<td class="text-center"><b>Date</b></td>
-						<td class="text-center"><b>Delete</b></td>
+						<td><b>队伍</b></td>
+						<td><b>题目</b></td>
+						<td><b>类型</b></td>
+						<td><b>提交</b></td>
+						<td class="text-center"><b>时间</b></td>
+						<td class="text-center"><b>删除</b></td>
 					</tr>
 				</thead>
 				<tbody>
@@ -58,7 +58,7 @@
 				</tbody>
 			</table>
 			{% if page_count > 1 %}
-			<div class="text-center">Page
+			<div class="text-center">页面
 				<br>
 				{% if curr_page != 1 %}
 					<a href="?page={{ curr_page - 1 }}">&lt;&lt;&lt;</a>
